@@ -14,7 +14,7 @@ const CartItem = ({ item }) => {
   const classes = useStyles();
 
   return (
-    <Card>
+    <Card className="cart-item">
       <CardMedia
         image={item.media.source}
         alt={item.name}
@@ -26,7 +26,7 @@ const CartItem = ({ item }) => {
           {item.line_total.formatted_with_symbol}
         </Typography>
       </CardContent>
-      <CardContent className={classes.cardActions}>
+      <CardActions className={classes.cardActions}>
         <div className={classes.buttons}>
           <Button type="button" size="small">
             -
@@ -39,7 +39,7 @@ const CartItem = ({ item }) => {
         <Button variant="contained" type="button" color="secondary">
           Remove
         </Button>
-      </CardContent>
+      </CardActions>
     </Card>
   );
 };
