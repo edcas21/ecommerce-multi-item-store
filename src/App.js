@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // import Products from './components/Products/Products';
 // import NavBar from './components/NavBar/Navbar';
 
-import { Products, Navbar } from "./components";
+import { Products, Navbar, Cart } from "./components";
 import { commerce } from "./lib/commerce";
 
 const App = () => {
@@ -33,12 +33,11 @@ const App = () => {
     fetchCart();
   }, []);
 
-  console.log(cart);
-
   return (
     <div>
       <Navbar totalItems={cart.total_items} />
-      <Products products={products} onAddToCart={addToCart} />
+      {/*<Products products={products} onAddToCart={addToCart} />*/}
+      <Cart cart={cart} />
     </div>
   );
 };
