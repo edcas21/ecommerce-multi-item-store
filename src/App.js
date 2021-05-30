@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Products from './components/Products/Products';
 // import NavBar from './components/NavBar/Navbar';
 
-import { Products, Navbar, Cart } from "./components";
+import { Products, Navbar, Cart, Checkout } from "./components";
 import { commerce } from "./lib/commerce";
 
 const App = () => {
@@ -59,12 +59,15 @@ const App = () => {
             <Products products={products} onAddToCart={addToCart} />
           </Route>
           <Route exact path="/cart">
-            <Cart 
-            cart={cart}
-            updateCartQty={updateCartQty}
-            removeFromCart={removeFromCart}
-            emptyCart={emptyCart}
-             />
+            <Cart
+              cart={cart}
+              updateCartQty={updateCartQty}
+              removeFromCart={removeFromCart}
+              emptyCart={emptyCart}
+            />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
       </div>
